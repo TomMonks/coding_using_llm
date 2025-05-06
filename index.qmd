@@ -1,0 +1,68 @@
+---
+title: "An introduction to prompt engineering for coding"
+author: "Tom Monks"
+format:
+  revealjs: 
+    theme: dark
+    footer: "<https://github.com/pythonhealthdatascience/gw4_prize_presentation>"
+    preview-links: true
+    height: 800
+    width: 1250
+    preload-iframes: true
+    controls: true
+    controls-layout: bottom-right
+    revealjs-plugins:
+     - fullscreen
+
+---
+
+# Today
+
+* The future 🔮🤩😬
+* LLM contexts, context lengths and tokens
+* Retrieval Augmented Generation (RAG)
+* Hallucination 😵‍💫 and data contamination 🤢
+* AI in your IDE versus a ChatBot
+* Applied examples and exercises
+
+## Exercises for fun
+
+* One and few-shot. 
+  * Coding a basic boostrap
+  * Adding PEP257 or numpy style docstrings
+
+* System prompt
+  * defensive programming 
+  * units testing
+
+> All exercises were designed for my Python class 🐍. But please use what you like!
+
+
+## The future
+
+![Kwa et al. (2025). Measuring AI Ability to Complete Long Tasks. arxiv. https://arxiv.org/abs/2503.14499](images/kwa_et_al.png)
+
+
+
+
+## Context and tokens
+
+```text
+Given five positive integers, find the minimum and maximum values that 
+can be calculated by summing exactly four of the five integers. 
+Print the respective minimum and maximum values.
+```
+
+Token visualiser: [https://lunary.ai/deepseek-tokenizer](https://lunary.ai/deepseek-tokenizer)
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
