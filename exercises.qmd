@@ -1,0 +1,55 @@
+# Exercises
+
+Choose a generative AI ChatBot to use for this task. Some options are Perplexity.ai, Anthropic's Claude, ChatGPT and Google Gemini.
+
+## 1. A simple python function
+
+```
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Print the respective minimum and maximum values. Code the solution in Python as a python function that accepts a Python list as a parameter.
+```
+
+* **Task**: Do you need to issue any additional prompts to fine tune the output?  For example splitting the function into two separate functions representing the minimum and maximum values.
+* **Task**: Modify this prompt using 1-shot prompt engineering i.e. include the example output.  Try this in a new chat window and compare outputs.
+
+```markdown
+Given five positive integers in a list, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Print the respective minimum and maximum values. Code the solution in Python as a python function that accepts a Python list as a parameter.
+
+Example 
+
+input  = [9, 3, 5, 7, 1]
+Output = 16, 24
+
+```
+
+## 2. The bootstrap
+	 	 	 	
+The prompts below are different approaches to generating the Python code for the basic bootrap.
+
+### A basic prompt followed by iterative improvement
+
+* **Task**: Run the prompt below multiple times and observe the differences in code produced.
+* Are there additional iterative prompts you can add to the context to improve the code or develop it towards your original intent?
+
+```
+write a python function that implements the basic bootstrap routine to construct the distribution of the mean.
+```
+
+### Prompt engineering option 1
+
+* This time we provide additional detail to the generative tool. 
+* We ask for efficiency, although this is vaguely specified
+* We list the function parameters and the function return value. Although again this could be argued to be ambiguous.
+* **Task**: Run the prompt multiple time to see 
+
+```
+write a python function that implements the basic bootstrap routine to construct the distribution of the mean. The function should make use of appropriate data science packages to ensure it is as efficient as possible.
+
+Function parameters:
+
+An array-like object (e.g. numpy or a python list) that contains the original data
+The number of bootstrap samples to take
+
+Return value
+An array-like object containing the bootstrap values
+
+```

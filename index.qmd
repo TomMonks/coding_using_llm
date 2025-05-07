@@ -1,9 +1,7 @@
 ---
-title: "An introduction to prompt engineering for coding"
-author: "Tom Monks"
 format:
   revealjs: 
-    theme: dark
+    theme: ["styles.scss"]
     footer: "<https://github.com/pythonhealthdatascience/gw4_prize_presentation>"
     preview-links: true
     height: 800
@@ -16,12 +14,21 @@ format:
 
 ---
 
-# Today
+# An introduction to prompt engineering for coding
+
+
+<br>
+<h3>Tom Monks <a href="https://orcid.org/0000-0003-2631-4481" aria-label="View ORCID record"><img src="images/orcid.png" alt="ORCID iD" style="width:32px; margin-left:15px; margin-right:6px; vertical-align:middle;"></a>0000-0003-2631-4481</h3>
+<br>
+<br>
+
+
+## Today
 
 * The future 🔮🤩😬
 * LLM contexts, context lengths and tokens
+* Hallucination 😵‍💫 vs. data contamination 🤢 vs. understanding 🤔
 * Retrieval Augmented Generation (RAG)
-* Hallucination 😵‍💫 and data contamination 🤢
 * AI in your IDE versus a ChatBot
 * Applied examples and exercises
 
@@ -55,14 +62,54 @@ Print the respective minimum and maximum values.
 
 Token visualiser: [https://lunary.ai/deepseek-tokenizer](https://lunary.ai/deepseek-tokenizer)
 
-# In the evening
+## Hallucination (1)
 
-## Dinner
+![Google Bard launch marketing](images/bard_halluc.png)
 
-- Eat spaghetti
-- Drink wine
 
-## Going to sleep
+## Hallucination (2)
 
-- Get in bed
-- Count sheep
+![Not a bot](images/bard_astro_response.png)
+
+
+## Prompt Engineering for coding
+
+The process of crafting effective inputs to elicit desired outputs from LLMs.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/prompt_engineer_1.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/prompt_engineer_2.jpg)
+:::
+
+::::
+
+## {#Exercises fullscreen=true}
+
+<iframe class="stretch" data-src="exercises.html"></iframe> 
+
+
+## A simple python function
+
+
+Baseline:
+
+```text
+Given five positive integers, find the minimum and maximum values that 
+can be calculated by summing exactly four of the five integers. 
+Print the respective minimum and maximum values.
+```
+
+Task: Do you need to issue any additional prompts to fine tune the output?  For example splitting the function into two separate functions representing the minimum and maximum values.
+Task: Modify this prompt using 1-shot prompt engineering i.e. include the example output.  Try this in a new chat window and compare outputs.
+
+Given five positive integers in a list, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Print the respective minimum and maximum values. Code the solution in Python as a python function that accepts a Python list as a parameter.
+
+Example 
+
+input  = [9, 3, 5, 7, 1]
+Output = 16, 24
