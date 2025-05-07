@@ -92,6 +92,10 @@ The process of crafting effective inputs to elicit desired outputs from LLMs.
 
 <iframe class="stretch" data-src="exercises.html"></iframe>  -->
 
+## {#Testing fullscreen=true}
+
+<iframe class="stretch" data-src="testing_exercises.html"></iframe>  -->
+
 
 <!-- ## A simple python function
 
