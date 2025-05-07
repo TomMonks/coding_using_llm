@@ -1,14 +1,35 @@
-# Exercises
+---
+format:
+  html:
+    code-overflow: wrap
+---
 
-Choose a generative AI ChatBot to use for this task. Some options are Perplexity.ai, Anthropic's Claude, ChatGPT and Google Gemini.
+# Basic Exercises
+
+A set of very basic prompt engineering examples. These focus on removing ambiguity from the prompts.
+
+::: {.callout-tip}
+## Choose you favourite AI!
+
+Choose a generative AI ChatBot to use for this task. Some options are Perplexity.ai, Anthropic's Claude, ChatGPT and Google Gemini.  
+:::
 
 ## 1. A simple python function
 
-```
+### 1.1 Zero shot
+
+* **Task**: Do you need to issue any additional prompts to fine tune the output?  For example splitting the function into two separate functions representing the minimum and maximum values.
+
+```markdown
 Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Print the respective minimum and maximum values. Code the solution in Python as a python function that accepts a Python list as a parameter.
 ```
 
-* **Task**: Do you need to issue any additional prompts to fine tune the output?  For example splitting the function into two separate functions representing the minimum and maximum values.
+
+
+### 1.2 One shot
+
+In one shot prompt engineering we are including *some form* of example of what we want in the context. For basic coding, one option is to include example data.
+
 * **Task**: Modify this prompt using 1-shot prompt engineering i.e. include the example output.  Try this in a new chat window and compare outputs.
 
 ```markdown
@@ -25,31 +46,97 @@ Output = 16, 24
 	 	 	 	
 The prompts below are different approaches to generating the Python code for the basic bootrap.
 
-### A basic prompt followed by iterative improvement
+::: {.callout-tip collapse="true"}
+## The Bootstrap Method: A Simple Explanation
+
+The bootstrap method is a statistical technique that helps estimate the properties of a sample (like its mean or variance) without making assumptions about how the data is distributed. 
+
+Imagine you have a small dataset and want to understand how reliable your calculated average (mean) is. The bootstrap works like this:
+
+1. Take your original data sample
+2. Randomly select values from it, with replacement (meaning you can pick the same value multiple times)
+3. Calculate the statistic of interest (like the mean) for this new "resampled" dataset
+4. Repeat steps 2-3 many times (typically hundreds or thousands)
+5. The collection of calculated statistics forms a distribution that approximates how your statistic might vary across different samples
+
+This approach lets you estimate confidence intervals and understand the uncertainty in your statistics without needing more data or making distributional assumptions. It's particularly valuable when you have limited data or complex statistical situations.
+:::
+
+### 2.1 A basic prompt followed by iterative improvement
 
 * **Task**: Run the prompt below multiple times and observe the differences in code produced.
 * Are there additional iterative prompts you can add to the context to improve the code or develop it towards your original intent?
 
-```
+```markdown
 write a python function that implements the basic bootstrap routine to construct the distribution of the mean.
 ```
 
-### Prompt engineering option 1
+### 2.2. Prompt engineering option 1
 
 * This time we provide additional detail to the generative tool. 
 * We ask for efficiency, although this is vaguely specified
 * We list the function parameters and the function return value. Although again this could be argued to be ambiguous.
 * **Task**: Run the prompt multiple time to see 
 
-```
+```markdown
+
+## Function description: 
+
 write a python function that implements the basic bootstrap routine to construct the distribution of the mean. The function should make use of appropriate data science packages to ensure it is as efficient as possible.
 
-Function parameters:
+## Function parameters:
 
-An array-like object (e.g. numpy or a python list) that contains the original data
-The number of bootstrap samples to take
+1. An array-like object (e.g. numpy or a python list) that contains the original data.
+2. The number of bootstrap samples to obtain.
 
-Return value
+## Return value:
 An array-like object containing the bootstrap values
 
 ```
+
+### 2.3 Prompt engineering option 2
+This time we include a less ambiguous specification I.e. use numpy and the default random number generator, use numpy vectorised operations etc.   We will also added in a random seed to make the function reproducible and easier to test.
+
+
+* **Task**: run the prompt in different contexts. How do the results differ? Has consistency improved? Do the results differ if you switch to an alternative ChatBot?
+
+```markdown
+
+write a python function that implements the basic bootstrap routine to construct the distribution of the mean.
+
+## Specification:
+1. Use numpy and its default random number generator
+2. Maximise the speed of the code by eliminating all python for loops and using calls to numpy universal functions.
+3. convert any array-like parameters to numpy arrays before performing the bootstrap
+
+## Function parameters:
+1. An array-like object (e.g. numpy or a python list) that contains the original data
+2. The number of bootstrap samples to take  (integer, default = 1000)
+3. A seed (int or SeedSequence) to ensure that the result of the resampling is reproducible. (default = None)
+
+## Return value: 
+A 1 dimensional  numpy array object containing the bootstrap values.
+
+```
+
+### 3. Adding docstrings and comments to code
+
+This time we provide the code to the ChatBot and request that docstrings and comments are added.
+
+* **Task**: Run the prompt - does the generated documentation make sense?
+
+```markdown
+
+## request:
+Add a high quality PEP257 compliant docstring as well as code comments to the function below. Provide a usage example in the docstring and as code.
+
+## python code:
+def bootstrap(data, boots):
+    data = np.asarray(data)
+    rng = np.random.default_rng()
+    boot_data = data[rng.integers(0, data.shape[0], size=data.shape[0]*boots)]
+    return boot_data.reshape(-1, len(data)).sum(axis=1) / len(data)
+
+```
+
+

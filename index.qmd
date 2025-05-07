@@ -90,10 +90,10 @@ The process of crafting effective inputs to elicit desired outputs from LLMs.
 
 ## {#Exercises fullscreen=true}
 
-<iframe class="stretch" data-src="exercises.html"></iframe> 
+<iframe class="stretch" data-src="exercises.html"></iframe>  -->
 
 
-## A simple python function
+<!-- ## A simple python function
 
 
 Baseline:
@@ -112,4 +112,4 @@ Given five positive integers in a list, find the minimum and maximum values that
 Example 
 
 input  = [9, 3, 5, 7, 1]
-Output = 16, 24
+Output = 16, 24 -->
