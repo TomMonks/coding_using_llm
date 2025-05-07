@@ -1,0 +1,4 @@
+project:
+  title: "An introduction to prompt engineering for coding"
+  type: website
+  output-dir: docs
