@@ -2,7 +2,7 @@
 format:
   revealjs: 
     theme: ["styles.scss"]
-    footer: "<https://github.com/pythonhealthdatascience/gw4_prize_presentation>"
+    footer: "<https://github.com/TomMonks/coding_using_llm>"
     preview-links: true
     height: 800
     width: 1250
@@ -50,8 +50,6 @@ format:
 ![Kwa et al. (2025). Measuring AI Ability to Complete Long Tasks. arxiv. https://arxiv.org/abs/2503.14499](images/kwa_et_al.png)
 
 
-
-
 ## Context and tokens
 
 ```text
@@ -90,30 +88,8 @@ The process of crafting effective inputs to elicit desired outputs from LLMs.
 
 ## {#Exercises fullscreen=true}
 
-<iframe class="stretch" data-src="exercises.html"></iframe>  -->
+<iframe class="stretch" data-src="exercises/exercises.html"></iframe>  -->
 
 ## {#Testing fullscreen=true}
 
-<iframe class="stretch" data-src="testing_exercises.html"></iframe>  -->
-
-
-<!-- ## A simple python function
-
-
-Baseline:
-
-```text
-Given five positive integers, find the minimum and maximum values that 
-can be calculated by summing exactly four of the five integers. 
-Print the respective minimum and maximum values.
-```
-
-Task: Do you need to issue any additional prompts to fine tune the output?  For example splitting the function into two separate functions representing the minimum and maximum values.
-Task: Modify this prompt using 1-shot prompt engineering i.e. include the example output.  Try this in a new chat window and compare outputs.
-
-Given five positive integers in a list, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Print the respective minimum and maximum values. Code the solution in Python as a python function that accepts a Python list as a parameter.
-
-Example 
-
-input  = [9, 3, 5, 7, 1]
-Output = 16, 24 -->
+<iframe class="stretch" data-src="exercises/testing_exercises.html"></iframe>  -->
