@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://TomMonks.github.io/coding_using_llm/exercises/exercises.html</loc>
-    <lastmod>2025-05-08T09:34:19.908Z</lastmod>
+    <loc>https://TomMonks.github.io/coding_using_llm/exercises/simulation_models.html</loc>
+    <lastmod>2025-05-08T10:44:12.707Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TomMonks.github.io/coding_using_llm/exercises/search_task.html</loc>
+    <lastmod>2025-05-08T10:36:22.922Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TomMonks.github.io/coding_using_llm/index.html</loc>
+    <lastmod>2025-05-08T10:47:15.053Z</lastmod>
   </url>
   <url>
     <loc>https://TomMonks.github.io/coding_using_llm/exercises/testing_exercises.html</loc>
     <lastmod>2025-05-07T15:44:37.653Z</lastmod>
   </url>
   <url>
-    <loc>https://TomMonks.github.io/coding_using_llm/index.html</loc>
-    <lastmod>2025-05-08T10:36:25.120Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TomMonks.github.io/coding_using_llm/exercises/search_task.html</loc>
-    <lastmod>2025-05-08T10:36:22.922Z</lastmod>
+    <loc>https://TomMonks.github.io/coding_using_llm/exercises/exercises.html</loc>
+    <lastmod>2025-05-08T09:34:19.908Z</lastmod>
   </url>
 </urlset>
