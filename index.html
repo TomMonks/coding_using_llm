@@ -442,11 +442,34 @@ Tom Monks <a href="https://orcid.org/0000-0003-2631-4481" aria-label="View ORCID
 <section id="hallucination-1" class="slide level2">
 <h2>Hallucination (1)</h2>
 
-<img data-src="images/bard_halluc.png" class="r-stretch quarto-figure-center"><p class="caption">Google Bard launch marketing</p></section>
+<img data-src="images/bard_halluc.png" class="r-stretch"></section>
 <section id="hallucination-2" class="slide level2">
 <h2>Hallucination (2)</h2>
 
-<img data-src="images/bard_astro_response.png" class="r-stretch quarto-figure-center"><p class="caption">Not a bot</p></section>
+<img data-src="images/bard_astro_response.png" class="r-stretch"></section>
+<section id="other-reasons-for-mistakes" class="slide level2">
+<h2>Other reasons for mistakes:</h2>
+<ul>
+<li><strong>Data contamination</strong>
+<ul>
+<li>Trained on public code - the good, the bad, and the ugly</li>
+<li><strong>Side issue:</strong> difficult to assess capablities due to the size and obscurity of training data (leakage).</li>
+</ul></li>
+<li><strong>LLM Understanding</strong>
+<ul>
+<li>Have you been clear or ambigous?</li>
+<li>Is the model capable of understanding?</li>
+</ul></li>
+</ul>
+</section>
+<section id="retrieval-augmented-generation" class="slide level2">
+<h2>Retrieval Augmented Generation</h2>
+<p>Let’s take a look at <a href="https://www.perplexity.ai/">Perplexity.AI</a> to see RAG in action.</p>
+</section>
+<section id="ai-code-editors-instead-of-chatbots" class="slide level2">
+<h2>AI code editors instead of Chatbots</h2>
+
+<img data-src="images/cursor_IDE.png" class="r-stretch"></section>
 <section id="prompt-engineering-for-coding" class="slide level2">
 <h2>Prompt Engineering for coding</h2>
 <p>The process of crafting effective inputs to elicit desired outputs from LLMs.</p>
@@ -457,6 +480,20 @@ Tom Monks <a href="https://orcid.org/0000-0003-2631-4481" aria-label="View ORCID
 <p><img data-src="images/prompt_engineer_2.jpg"></p>
 </div></div>
 </section>
+<section id="some-simple-principles" class="slide level2">
+<h2>Some simple principles</h2>
+<ol type="1">
+<li>Provide examples where you can (so called one shot / few shot)</li>
+<li>Don’t ask AI to do too much in one go. Iteratively build code and context.</li>
+<li>One topic per context. Keep it simple.</li>
+<li>Be specific about what you want the code to output</li>
+<li>For more complex code you are almost writing code in natural language.</li>
+<li>Reasoning models can be great, but aren’t always needed for simple coding.</li>
+<li>You have to check the code is valid.</li>
+<li>Consider using AI to improve the quality of the code you write yourself.</li>
+<li>If it feels too easy then you might find its wrong!</li>
+</ol>
+</section>
 <section id="Exercises" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <iframe class="stretch" data-src="exercises/exercises.html">
@@ -466,6 +503,12 @@ Tom Monks <a href="https://orcid.org/0000-0003-2631-4481" aria-label="View ORCID
 <section id="Testing" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <iframe class="stretch" data-src="exercises/testing_exercises.html">
+</iframe>
+<p>–&gt;</p>
+</section>
+<section id="Daft" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<iframe class="stretch" data-src="exercises/search_task.html">
 </iframe>
 <p>–&gt;</p>
 
