@@ -119,7 +119,122 @@ A 1 dimensional  numpy array object containing the bootstrap values.
 
 ```
 
-### 3. Adding docstrings and comments to code
+### 3. One and few shots with code examples
+
+Let's assume you are creating some reuable code to use across several of your own (simulation) models. The prompt below asks the AI to create a triangular distribution class to use in sampling experiments in a simulation study (e.g. monte-carlo or discrete-event simulation). The prompt includes code examples for the AI to mimic including a Python protocol (basically an interface we want the Triangular class to implement).  
+
+* **Task:** Try prompting a few different AI's. Do you get consistent or varying results?
+* **Credits**: I've taken this example from my own python library I use for teaching.  Its so obscure that AI's seem to know very little about it!
+
+
+```markdown
+Create a Triangular class in Python for use in simulation models. The class should adhere to Distribution protocol shown below. The Uniform class is given as an example. 
+```
+
+```python
+@runtime_checkable
+class Distribution(Protocol):
+    """
+    Distribution protocol defining the interface for probability distributions.
+
+    Any class implementing this protocol should provide a sampling mechanism
+    that generates random values according to a specific probability
+    distribution.
+    """
+
+    def sample(
+        self, size: Optional[Union[int, Tuple[int, ...]]] = None
+    ) -> Union[float, NDArray[np.float64]]:
+        """
+        Generate random samples from the distribution.
+
+        Parameters
+        ----------
+        size : Optional[Union[int, Tuple[int, ...]]], default=None
+            The number/shape of samples to generate:
+            - If None: returns a single sample as a float
+            - If int: returns a 1-D array with that many samples
+            - If tuple of ints: returns an array with that shape
+
+        Returns
+        -------
+        Union[float, NDArray[np.float64]]
+            Random samples from the distribution:
+            - A single float when size is None
+            - A numpy array of floats with shape determined by size parameter
+
+        Examples
+        --------
+        >>> dist = SomeDistribution(params)
+        >>> single_sample = dist.sample()  # Returns a float
+        >>> array_1d = dist.sample(10)  # Returns 1D array with 10 samples
+        >>> array_2d = dist.sample((2, 3))  # Returns 2×3 array of samples
+        """
+
+class Uniform:
+    """
+    Uniform distribution implementation.
+
+    A continuous probability distribution where all values in a range have
+    equal probability of being sampled.
+
+    This class conforms to the Distribution protocol and provides methods to
+    sample from a uniform distribution between specified low and high values.
+    """
+
+    def __init__(
+        self,
+        low: float,
+        high: float,
+        random_seed: Optional[Union[int, SeedSequence]] = None,
+    ):
+        """
+        Initialize a uniform distribution.
+
+        Parameters
+        ----------
+        low : float
+            Lower bound of the distribution range.
+
+        high : float
+            Upper bound of the distribution range.
+
+        random_seed : Optional[Union[int, SeedSequence]], default=None
+            A random seed or SeedSequence to reproduce samples. If None, a
+            unique sample sequence is generated.
+        """
+        self.rng = np.random.default_rng(random_seed)
+        self.low = low
+        self.high = high
+
+    def __repr__(self):
+        return f"Uniform(low={self.low}, high={self.high})"
+
+    def sample(
+        self, size: Optional[Union[int, Tuple[int, ...]]] = None
+    ) -> Union[float, NDArray[np.float64]]:
+        """
+        Generate random samples from the uniform distribution.
+
+        Parameters
+        ----------
+        size : Optional[Union[int, Tuple[int, ...]]], default=None
+            The number/shape of samples to generate:
+            - If None: returns a single sample as a float
+            - If int: returns a 1-D array with that many samples
+            - If tuple of ints: returns an array with that shape
+
+        Returns
+        -------
+        Union[float, NDArray[np.float64]]
+            Random samples from the uniform distribution:
+            - A single float when size is None
+            - A numpy array of floats with shape determined by size parameter
+        """
+        return self.rng.uniform(low=self.low, high=self.high, size=size)       
+```
+
+### 4. Adding docstrings and comments to code
 
 This time we provide the code to the ChatBot and request that docstrings and comments are added.
 

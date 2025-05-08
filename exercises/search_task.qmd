@@ -1,0 +1,32 @@
+---
+format:
+  html:
+    code-overflow: wrap
+---
+
+
+# My wish list and crazy examples
+
+In this example, I am going to ask Claude 3.7 (with reasoning) to find an academic paper, located an algorithm in it and provide an implementation.  
+
+> Note that in my experience this is hit and miss in terms of if it will work, but its a big improvement on a year ago! I did actually use Claude 3.7 to help me quickly adapt the algorithm into something useful.
+
+The paper is here: [https://journals.sagepub.com/doi/10.1177/0037549706065514](https://journals.sagepub.com/doi/10.1177/0037549706065514)
+
+```markdown
+## search task
+
+locate the paper called "Numerical Methods for Realizing Nonstationary Poisson Processes with Piecewise-Constant Instantaneous-Rate Functions" by Harrod and Kelton published in "simulation" vol 82 issue 3 in 2006
+
+## coding task
+
+Create a python implementation of the direct algorithm for the NSPP.  
+
+## check of reasoning
+
+state your understanding of the direct algorithm and the r_k , c_k parameters.  
+
+## validation task
+
+Provide guidance about how to test that the algorithm you have provided is working as expected
+```

@@ -1,0 +1,9 @@
+# Complex projects
+
+We ran a project about this last year.  It worked, but was painful!
+
+* [Full simulation models coded in Python](https://pythonhealthdatascience.github.io/llm_simpy_models/)
+* [Pre-print](https://arxiv.org/abs/2503.21646)
+* [Simulation code and prompts](https://pythonhealthdatascience.github.io/llm_simpy/)
+
+![](../images/preprint.png)

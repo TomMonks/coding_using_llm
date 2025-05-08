@@ -62,12 +62,31 @@ Token visualiser: [https://lunary.ai/deepseek-tokenizer](https://lunary.ai/deeps
 
 ## Hallucination (1)
 
-![Google Bard launch marketing](images/bard_halluc.png)
+![](images/bard_halluc.png)
 
 
 ## Hallucination (2)
 
-![Not a bot](images/bard_astro_response.png)
+![](images/bard_astro_response.png)
+
+## Other reasons for mistakes:
+
+* **Data contamination**
+  * Trained on public code - the good, the bad, and the ugly
+  * **Side issue:** difficult to assess capablities due to the size and obscurity of training data (leakage).
+
+* **LLM Understanding**
+  * Have you been clear or ambigous?
+  * Is the model capable of understanding?
+
+
+## Retrieval Augmented Generation
+
+Let's take a look at [Perplexity.AI](https://www.perplexity.ai/) to see RAG in action.
+
+## AI code editors instead of Chatbots
+
+![](images/cursor_IDE.png)
 
 
 ## Prompt Engineering for coding
@@ -86,6 +105,19 @@ The process of crafting effective inputs to elicit desired outputs from LLMs.
 
 ::::
 
+## Some simple principles
+
+1. Provide examples where you can (so called one shot / few shot)
+2. Don't ask AI to do too much in one go. Iteratively build code and context.
+3. One topic per context. Keep it simple.
+4. Be specific about what you want the code to output
+5. For more complex code you are almost writing code in natural language. 
+6. Reasoning models can be great, but aren't always needed for simple coding. 
+7. You have to check the code is valid.
+8. Consider using AI to improve the quality of the code you write yourself.
+9. If it feels too easy then you might find its wrong!
+
+
 ## {#Exercises fullscreen=true}
 
 <iframe class="stretch" data-src="exercises/exercises.html"></iframe>  -->
@@ -93,3 +125,21 @@ The process of crafting effective inputs to elicit desired outputs from LLMs.
 ## {#Testing fullscreen=true}
 
 <iframe class="stretch" data-src="exercises/testing_exercises.html"></iframe>  -->
+
+## {#Search fullscreen=true}
+
+<iframe class="stretch" data-src="exercises/search_task.html"></iframe>  -->
+
+## {#Complex fullscreen=true}
+
+<iframe class="stretch" data-src="exercises/simulation_models.html"></iframe>  -->
+
+## Happy coding
+
+::: {.column width="50%"}
+![](images/prompt_engineer_1.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/prompt_engineer_2.jpg)
+:::
